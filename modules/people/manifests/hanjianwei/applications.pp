@@ -43,6 +43,7 @@ class people::hanjianwei::applications inherits people::hanjianwei::config {
     'scrivener',
     'seil',
     'shiori',
+    'trim-enabler',
     'qq',
     'qt-creator',
     'vagrant',
