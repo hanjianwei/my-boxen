@@ -1,4 +1,7 @@
-class people::hanjianwei::osx inherits people::hanjianwei::config {
+class people::hanjianwei::osx(
+  $home     = $people::hanjianwei::config::home,
+  $dotfiles = $people::hanjianwei::config::dotfiles
+) {
   # Zsh
   osx_chsh { $boxen_user:
     shell => '/bin/zsh'

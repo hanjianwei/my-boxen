@@ -1,5 +1,7 @@
-class people::hanjianwei::applications inherits people::hanjianwei::config {
-  notify { "${homebrew::config::cachedir}": }
+class people::hanjianwei::applications(
+  $home     = $people::hanjianwei::config::home,
+  $dotfiles = $people::hanjianwei::config::dotfiles
+) {
 
   # Declare all Homebrew packages
   package {
@@ -53,7 +55,7 @@ class people::hanjianwei::applications inherits people::hanjianwei::config {
       'welly',
       'xmind'
     ]:
-    provider => 'brewcask'
+      provider => 'brewcask'
   }
 
   # Taps
