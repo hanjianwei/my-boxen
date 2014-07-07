@@ -2,13 +2,14 @@ class people::hanjianwei::applications inherits people::hanjianwei::config {
   notify { "${homebrew::config::cachedir}": }
 
   # Declare all Homebrew packages
-  $brew_pkgs = [
-    'wget',
-    'qt5',
-    'tmux',
-    'vim'
-  ]
-  package { $brew_pkgs: }
+  package {
+    [
+      'wget',
+      'qt5',
+      'tmux',
+      'vim'
+    ]:
+  }
 
   homebrew::tap { 'homebrew/science': }
   ->
@@ -17,42 +18,41 @@ class people::hanjianwei::applications inherits people::hanjianwei::config {
   # Declare all Hombrew Cask packages
   include brewcask
 
-  $cask_pkgs = [
-    'acorn',
-    'alfred',
-    'atom',
-    'bettertouchtool',
-    'caffeine',
-    'cleanmymac',
-    'dropbox',
-    'evernote',
-    'fantastical',
-    'firefox',
-    'google-chrome',
-    'hazel',
-    'iterm2',
-    'keyboard-maestro',
-    'keyremap4macbook',
-    'mactex',
-    'omnifocus',
-    'onepassword',
-    'parallels',
-    'pycharm-ce',
-    'scapple',
-    'screenflow',
-    'scrivener',
-    'seil',
-    'shiori',
-    'trim-enabler',
-    'qq',
-    'qt-creator',
-    'vagrant',
-    'virtualbox',
-    'welly',
-    'xmind'
-  ]
-
-  package { $cask_pkgs:
+  package {
+    [
+      'acorn',
+      'alfred',
+      'atom',
+      'bettertouchtool',
+      'caffeine',
+      'cleanmymac',
+      'dropbox',
+      'evernote',
+      'fantastical',
+      'firefox',
+      'google-chrome',
+      'hazel',
+      'iterm2',
+      'keyboard-maestro',
+      'keyremap4macbook',
+      'mactex',
+      'omnifocus',
+      'onepassword',
+      'parallels',
+      'pycharm-ce',
+      'scapple',
+      'screenflow',
+      'scrivener',
+      'seil',
+      'shiori',
+      'trim-enabler',
+      'qq',
+      'qt-creator',
+      'vagrant',
+      'virtualbox',
+      'welly',
+      'xmind'
+    ]:
     provider => 'brewcask'
   }
 
