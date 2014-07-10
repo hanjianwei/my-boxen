@@ -1,16 +1,10 @@
-class people::hanjianwei::applications(
-  $home     = $people::hanjianwei::config::home,
-  $dotfiles = $people::hanjianwei::config::dotfiles
-) {
+class people::hanjianwei::applications {
 
   # Declare all Homebrew packages
-  package {
-    [
-      'wget',
-      'qt5',
-      'tmux',
-      'vim'
-    ]:
+  package { ['wget',
+             'qt5',
+             'tmux',
+             'vim']:
   }
 
   homebrew::tap { 'homebrew/science': }
@@ -20,42 +14,39 @@ class people::hanjianwei::applications(
   # Declare all Hombrew Cask packages
   include brewcask
 
-  package {
-    [
-      'acorn',
-      'alfred',
-      'atom',
-      'bettertouchtool',
-      'caffeine',
-      'cleanmymac',
-      'dropbox',
-      'evernote',
-      'fantastical',
-      'firefox',
-      'google-chrome',
-      'hazel',
-      'iterm2',
-      'keyboard-maestro',
-      'keyremap4macbook',
-      'mactex',
-      'omnifocus',
-      'onepassword',
-      'parallels',
-      'pycharm-ce',
-      'scapple',
-      'screenflow',
-      'scrivener',
-      'seil',
-      'shiori',
-      'trim-enabler',
-      'qq',
-      'qt-creator',
-      'vagrant',
-      'virtualbox',
-      'welly',
-      'xmind'
-    ]:
-      provider => 'brewcask'
+  package { ['acorn',
+             'alfred',
+             'atom',
+             'bettertouchtool',
+             'caffeine',
+             'cleanmymac',
+             'dropbox',
+             'evernote',
+             'fantastical',
+             'firefox',
+             'google-chrome',
+             'hazel',
+             'iterm2',
+             'keyboard-maestro',
+             'keyremap4macbook',
+             'mactex',
+             'omnifocus',
+             'onepassword',
+             'parallels',
+             'pycharm-ce',
+             'scapple',
+             'screenflow',
+             'scrivener',
+             'seil',
+             'shiori',
+             'trim-enabler',
+             'qq',
+             'qt-creator',
+             'vagrant',
+             'virtualbox',
+             'welly',
+             'xmind']:
+    provider => 'brewcask'
   }
 
   # Taps
@@ -77,77 +68,36 @@ class people::hanjianwei::applications(
     provider => 'brewcask'
   }
 
-  # tmux
-  Package['tmux']
-  ->
-  file { "${home}/.tmux.conf":
-    ensure  => link,
-    target  => "${dotfiles}/tmux/tmux.conf",
-    require => Repository["${dotfiles}"]
+  # Apps configuration
+  class { 'dotfiles::tmux':
+    require => Package['tmux'],
   }
 
-  # Vim
-  Package['vim']
-  ->
-  file { "${home}/.vimrc":
-    ensure  => link,
-    target  => "${dotfiles}/Vim/vimrc",
-    require => Repository["${dotfiles}"]
-  }
-  ->
-  file { ["${home}/.vim", "${home}/.vim/bundle"]:
-    ensure => directory
-  }
-  ->
-  repository { "${home}/.vim/bundle/Vundle.vim":
-    source => 'gmarik/Vundle.vim'
-  }
-  ->
-  exec { 'vim +BundleInstall +BundleClean +qall': }
-
-
-  # Emacs mac port
-  Package['emacs-mac']
-  ->
-  file { "${home}/.emacs.d":
-    ensure => directory
-  }
-  ->
-  file { "${home}/.emacs.d/init.el":
-    ensure  => link,
-    target  => "${dotfiles}/Emacs/init.el",
-    require => Repository["${dotfiles}"]
-  }
-  ->
-  repository { "${home}/.emacs.d/snippets":
-    source => 'hanjianwei/yasnippet-snippets'
+  class { 'dotfiles::vim':
+    require => Package['vim'],
   }
 
-  # Firefox
-  Package['firefox']
-  ->
-  file { "${home}/.vimperatorrc":
-    target  => "${dotfiles}/Vimperator/vimperatorrc",
-    require => Repository["${dotfiles}"]
+  class { 'dotfiles::emacs':
+    require => Package['emacs-mac'],
   }
 
-  # KeyRemap4Macbook
-  # include keyremap4macbook
-  # include keyremap4macbook::login_item
-  # keyremap4macbook::remap { 'private.f19_to_hyper': }
-  # keyremap4macbook::private_xml { 'private.xml':
-  #   source  => "${dotfiles}/KeyRemap4MacBook/private.xml",
-  #   require => Repository["${dotfiles}"]
-  # }
+  class { 'dotfiles::vimperator':
+    require => Package['firefox'],
+  }
 
-  # Seil
-  #include seil
-  #include seil::login_item
-  #seil::bind { 'keyboard bindings':
-    #mappings => { 'capslock' => 80 }
-  #}
+  class { 'dotfiles::keyremap4macbook':
+    require => Package['keyremap4macbook'],
+  }
 
-  # Vagrant
-  #include vagrant
-  #vagrant::plugin { 'vagrant-vbguest': }
+  class { 'dotfiles::seil':
+    require => Package['seil']
+  }
+
+  osx_chsh { $boxen_user:
+    shell => '/bin/zsh'
+  }
+
+  include dotfiles::git
+  include dotfiles::zsh
+  include dotfiles::rubygems
 }
