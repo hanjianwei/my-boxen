@@ -69,35 +69,23 @@ class people::hanjianwei::applications {
   }
 
   # Apps configuration
-  class { 'dotfiles::tmux':
-    require => Package['tmux'],
-  }
-
-  class { 'dotfiles::vim':
-    require => Package['vim'],
-  }
-
-  class { 'dotfiles::emacs':
-    require => Package['emacs-mac'],
-  }
-
-  class { 'dotfiles::vimperator':
-    require => Package['firefox'],
-  }
-
-  class { 'dotfiles::keyremap4macbook':
-    require => Package['keyremap4macbook'],
-  }
-
-  class { 'dotfiles::seil':
-    require => Package['seil']
-  }
+  Package <| |> -> Dotfiles::Deploy <| |>
 
   osx_chsh { $boxen_user:
     shell => '/bin/zsh'
   }
 
-  include dotfiles::git
-  include dotfiles::zsh
-  include dotfiles::rubygems
+  dotfiles::deploy { ['atom',
+                      'bettertouchtool',
+                      'emacs',
+                      'git',
+                      'iterm2',
+                      'keyremap4macbook',
+                      'prezto',
+                      'seil',
+                      'tmux',
+                      'vim',
+                      'vimperator',
+                      'zsh']:
+  }
 }
