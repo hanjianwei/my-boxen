@@ -86,7 +86,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: hanjianwei/puppet-dotfiles
   specs:
-    dotfiles (0.0.5)
+    dotfiles (0.0.6)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -107,7 +107,7 @@ DEPENDENCIES
   boxen (= 3.6.1)
   brewcask (= 0.0.4.rc2)
   dnsmasq (= 1.0.1)
-  dotfiles (= 0.0.5)
+  dotfiles (= 0.0.6)
   gcc (= 2.0.101)
   git (= 2.4.0)
   homebrew (= 1.9.4)
