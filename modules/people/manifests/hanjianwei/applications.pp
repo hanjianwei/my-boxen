@@ -11,7 +11,7 @@ class people::hanjianwei::applications {
   ->
   package { 'opencv': }
 
-  # Declare all Hombrew Cask packages
+  # Declare all Homebrew Cask packages
   include brewcask
 
   package { ['acorn',
@@ -50,6 +50,12 @@ class people::hanjianwei::applications {
   }
 
   # Taps
+  homebrew::tap { 'hanjianwei/apps': }
+  ->
+  package { 'squirrel':
+    provider => 'brewcask'
+  }
+
   homebrew::tap { 'caskroom/fonts': }
   ->
   package { 'font-inconsolata-for-powerline':
@@ -83,6 +89,7 @@ class people::hanjianwei::applications {
                       'karabiner',
                       'prezto',
                       'seil',
+                      'squirrel',
                       'tmux',
                       'vim',
                       'vimperator',
