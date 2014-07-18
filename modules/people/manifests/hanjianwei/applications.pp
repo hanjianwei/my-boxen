@@ -1,10 +1,12 @@
 class people::hanjianwei::applications {
 
   # Declare all Homebrew packages
-  package { ['wget',
+  package { ['ack',
              'qt5',
+             'reattach-to-user-namespace',
              'tmux',
-             'vim']:
+             'vim',
+             'wget']:
   }
 
   homebrew::tap { 'homebrew/science': }
@@ -58,7 +60,17 @@ class people::hanjianwei::applications {
 
   homebrew::tap { 'caskroom/fonts': }
   ->
-  package { 'font-inconsolata-for-powerline':
+  package { ['font-anonymous-pro',
+             'font-dejavu-sans',
+             'font-dejavu-sans-mono-for-powerline',
+             'font-inconsolata-dz-for-powerline',
+             'font-inconsolata-for-powerline',
+             'font-sauce-code-powerline',
+             'font-source-code-pro',
+             'font-source-sans-pro',
+             'font-source-serif-pro',
+             'font-terminus',
+             'font-ubuntu-mono-powerline']:
     provider => 'brewcask'
   }
 
