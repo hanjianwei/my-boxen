@@ -5,8 +5,11 @@ class people::hanjianwei::applications {
              'qt5',
              'reattach-to-user-namespace',
              'tmux',
-             'vim',
              'wget']:
+  }
+
+  package { 'vim':
+    install_options => ['--override-system-vi'],
   }
 
   homebrew::tap { 'homebrew/science': }

@@ -23,3 +23,12 @@
 
 # required for Github Enterprise (defaults to "https://github.com/%s")
 # ENV['BOXEN_REPO_URL_TEMPLATE'] = 'https://github.yourdomain.com/%s'
+
+# Setup config for Homebrew
+require 'fileutils'
+
+facts_dir = '/opt/boxen/config/facts'
+homebrew_json = '{"use_default_homebrew": true}'
+
+FileUtils.mkdir_p facts_dir
+File.write "#{facts_dir}/homebrew.json", homebrew_json

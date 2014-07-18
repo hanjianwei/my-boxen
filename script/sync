@@ -35,7 +35,7 @@ config = Boxen::Config.load
 
 # Sync Homebrew packages.
 
-Dir.chdir "#{config.homedir}/homebrew/Cellar" do
+Dir.chdir "/usr/local/Cellar" do
   Dir["*/*"].each do |dir|
     name, version = File.split dir
 
