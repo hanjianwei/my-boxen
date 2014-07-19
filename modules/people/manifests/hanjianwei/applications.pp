@@ -1,24 +1,20 @@
 class people::hanjianwei::applications {
 
-  Package {
-    ensure => 'latest'
-  }
-
   # Declare all Homebrew packages
   package { ['ack',
              'qt5',
              'reattach-to-user-namespace',
              'tmux',
+             'vim',
              'wget']:
-  }
-
-  package { 'vim':
-    install_options => ['--override-system-vi'],
+    ensure => 'latest'
   }
 
   homebrew::tap { 'homebrew/science': }
   ->
-  package { 'opencv': }
+  package { 'opencv':
+    ensure => 'latest'
+  }
 
   # Declare all Homebrew Cask packages
   include brewcask
