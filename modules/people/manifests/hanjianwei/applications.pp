@@ -1,5 +1,9 @@
 class people::hanjianwei::applications {
 
+  Package {
+    ensure => 'latest'
+  }
+
   # Declare all Homebrew packages
   package { ['ack',
              'qt5',

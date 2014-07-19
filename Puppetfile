@@ -39,7 +39,7 @@ github "module-data", "0.0.3", :repo => "ripienaar/puppet-module-data"
 # some/most of these if you want, but it's not recommended.
 
 github "git",         "2.5.0"
-github "homebrew",    "1.9.5.rc",   :repo => "hanjianwei/puppet-homebrew"
+github "homebrew",    "1.9.5.rc2",  :repo => "hanjianwei/puppet-homebrew"
 github "hub",         "1.3.0"
 github "inifile",     "1.1.3",      :repo => "puppetlabs/puppetlabs-inifile"
 github "nodejs",      "3.8.1"

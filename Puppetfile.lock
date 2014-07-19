@@ -66,7 +66,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: hanjianwei/puppet-homebrew
   specs:
-    homebrew (1.9.5.rc)
+    homebrew (1.9.5.rc2)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -88,7 +88,7 @@ DEPENDENCIES
   brewcask (= 0.0.4.rc2)
   dotfiles (= 0.0.9)
   git (= 2.5.0)
-  homebrew (= 1.9.5.rc)
+  homebrew (= 1.9.5.rc2)
   hub (= 1.3.0)
   inifile (= 1.1.3)
   module-data (= 0.0.3)
