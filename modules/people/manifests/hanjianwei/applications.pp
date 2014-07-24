@@ -2,6 +2,7 @@ class people::hanjianwei::applications {
 
   # Declare all Homebrew packages
   package { ['ack',
+             'git-flow-avh',
              'qt5',
              'reattach-to-user-namespace',
              'tmux',
@@ -32,6 +33,8 @@ class people::hanjianwei::applications {
              'google-chrome',
              'hazel',
              'iterm2',
+             'java',
+             'java6',
              'karabiner',
              'keyboard-maestro',
              'mactex',
