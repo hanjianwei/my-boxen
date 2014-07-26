@@ -119,6 +119,5 @@ class people::hanjianwei::applications {
                       'vim',
                       'vimperator',
                       'zsh']:
-    require => Repository["${::boxen_srcdir}/dotfiles"],
   }
 }
