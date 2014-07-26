@@ -55,5 +55,5 @@ github "xquartz",     "1.2.0"
 # https://github.com/boxen.
 github "osx",         "2.7.0"
 github "brewcask",    "0.0.4.rc2",  :repo => "hanjianwei/puppet-brewcask"
-github "dotfiles",    "0.0.9",      :repo => "hanjianwei/puppet-dotfiles"
+github "dotfiles",    "0.1.0",      :repo => "hanjianwei/puppet-dotfiles"
 github "python",      "0.0.2",      :repo => "hanjianwei/puppet-python"
