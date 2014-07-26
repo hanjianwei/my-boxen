@@ -64,10 +64,16 @@ node default {
   include nodejs::v0_10
   include nodejs::global
 
-  # default ruby versions
+  # ruby versions
   ruby::version { '1.9.3': }
   ruby::version { '2.1.2': }
   include ruby::global
+
+  # python versions
+  python::version { '2.7.8': }
+  python::version { '3.4.1': }
+  python::version { 'pypy-2.3.1': }
+  include python::global
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
