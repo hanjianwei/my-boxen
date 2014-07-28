@@ -23,6 +23,7 @@ class people::hanjianwei::applications {
   package { ['acorn',
              'alfred',
              'atom',
+             'baiducloud',
              'bettertouchtool',
              'caffeine',
              'cleanmymac',
