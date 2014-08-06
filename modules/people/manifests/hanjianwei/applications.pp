@@ -3,6 +3,7 @@ class people::hanjianwei::applications {
   # Declare all Homebrew packages
   package { ['ack',
              'git-flow-avh',
+             'nginx',
              'qt5',
              'reattach-to-user-namespace',
              'tmux',
@@ -72,6 +73,7 @@ class people::hanjianwei::applications {
              'font-dejavu-sans-mono-for-powerline',
              'font-inconsolata-dz-for-powerline',
              'font-inconsolata-for-powerline',
+             'font-input',
              'font-noto-sans',
              'font-noto-sans-s-chinese',
              'font-noto-sans-t-chinese',
