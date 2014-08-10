@@ -34,6 +34,7 @@ class people::hanjianwei::applications {
              'firefox',
              'google-chrome',
              'hazel',
+             'hipchat',
              'iterm2',
              'java',
              'java6',
