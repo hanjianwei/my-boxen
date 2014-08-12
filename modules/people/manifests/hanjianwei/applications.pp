@@ -2,6 +2,7 @@ class people::hanjianwei::applications {
 
   # Declare all Homebrew packages
   package { ['ack',
+             'docker',
              'git-flow-avh',
              'nginx',
              'qt5',
