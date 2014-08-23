@@ -35,7 +35,6 @@ class people::hanjianwei::applications {
              'firefox',
              'google-chrome',
              'hazel',
-             'hipchat',
              'iterm2',
              'java',
              'java6',
@@ -51,12 +50,15 @@ class people::hanjianwei::applications {
              'scrivener',
              'seil',
              'shiori',
+             'slack',
              'trim-enabler',
              'qq',
              'qt-creator',
              'vagrant',
+             'vimr',
              'virtualbox',
              'welly',
+             'xiami',
              'xmind']:
     provider => 'brewcask'
   }
