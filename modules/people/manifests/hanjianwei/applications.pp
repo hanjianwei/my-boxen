@@ -44,7 +44,7 @@ class people::hanjianwei::applications {
              'omnifocus',
              'onepassword',
              'parallels',
-             'pycharm-ce',
+             'pycharm',
              'scapple',
              'screenflow',
              'scrivener',
@@ -58,6 +58,7 @@ class people::hanjianwei::applications {
              'vimr',
              'virtualbox',
              'welly',
+             'webstorm',
              'xiami',
              'xmind']:
     provider => 'brewcask'
@@ -91,12 +92,6 @@ class people::hanjianwei::applications {
              'font-source-serif-pro',
              'font-terminus',
              'font-ubuntu-mono-powerline']:
-    provider => 'brewcask'
-  }
-
-  homebrew::tap { 'caskroom/versions': }
-  ->
-  package { 'intellij-idea-ultimate12':
     provider => 'brewcask'
   }
 
