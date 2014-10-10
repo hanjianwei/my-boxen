@@ -1,5 +1,4 @@
 ruby::global::version: "2.1.2"
-nodejs::global::version: "v0.10"
 python::global::version: "2.7.8"
 boxen::config::homebrewdir: "/usr/local"
 dotfiles::prefix: "/Users/%{::boxen_user}/Dropbox/dotfiles"

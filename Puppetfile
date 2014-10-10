@@ -36,30 +36,30 @@ end
 
 # Support for default hiera data in modules
 
-github "module_data", "0.0.3", :repo => "ripienaar/puppet-module-data"
+github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
-github "git",         "2.5.0"
+github "git",         "2.6.0"
 github "hub",         "1.3.0"
 github "inifile",     "1.1.3",      :repo => "puppetlabs/puppetlabs-inifile"
-github "nodejs",      "3.8.1"
+github "nodejs",      "4.0.0"
 github "openssl",     "1.0.0"
 github "pkgconfig",   "1.0.0"
 github "repository",  "2.3.0"
-github "ruby",        "8.1.2"
+github "ruby",        "8.1.4"
 github "stdlib",      "4.3.2",      :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
-github "xquartz",     "1.2.0"
+github "xquartz",     "1.2.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
-github "osx",         "2.7.0"
+github "osx",         "2.7.1"
 
 # Personal/Forked modules
-hjw "boxen",          "3.6.3.rc"
-hjw "homebrew",       "1.9.5.rc2"
+hjw "boxen",          "3.7.1.rc"
+hjw "homebrew",       "1.9.7.rc"
 hjw "brewcask",       "0.0.4.rc2"
 hjw "dotfiles",       "0.1.0"
 hjw "python",         "0.0.3"
