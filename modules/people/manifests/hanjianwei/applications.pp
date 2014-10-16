@@ -40,6 +40,7 @@ class people::hanjianwei::applications {
              'java6',
              'karabiner',
              'keyboard-maestro',
+             'launchbar',
              'mactex',
              'omnifocus',
              'onepassword',
